@@ -6,6 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh "./mvnw package jib:dockerBuild"
             }
         }
         stage('Test') {
@@ -16,6 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh "docker-compose up -d"
             }
         }
     }
