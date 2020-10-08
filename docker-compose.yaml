@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+
+  # DEMO SERVER
+  demo_server:
+    container_name: demo
+    environment:
+      - 'JAVA_TOOL_OPTIONS=-Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:PermSize=512m -Xmx2048M -Xms1024M -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:ParallelGCThreads=20
+      -XX:ConcGCThreads=5 -XX:InitiatingHeapOccupancyPercent=70'
+    image: demo:0.0.1
+    volumes:
+      - ~/.m2:/root/.m2
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/environment:/etc/environment:ro
+      - ~/logs:/root/logs
+    ports:
+      - "19999:8080"
