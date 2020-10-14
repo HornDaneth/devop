@@ -32,11 +32,6 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
@@ -112,11 +107,11 @@
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
 				<version>2.5.2</version>
-				<configuration>
-					<to>
-						<image>demo:0.0.1</image>
-					</to>
-				</configuration>
+<!--				<configuration>-->
+<!--					<to>-->
+<!--						<image>demo:0.0.1</image>-->
+<!--					</to>-->
+<!--				</configuration>-->
 			</plugin>
 		</plugins>
 	</build>
