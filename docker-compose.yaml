@@ -16,8 +16,9 @@ services:
       - ~/logs:/root/logs
     ports:
       - "19999:8080"
-      # BackOffice-API
-    backoffice_api:
+
+  # BackOffice-API
+  backoffice_api:
         container_name: backoffice-api
         environment:
           - 'JAVA_TOOL_OPTIONS=-Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:PermSize=512m -Xmx2048M -Xms1024M -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:ParallelGCThreads=20
