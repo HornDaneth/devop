@@ -1,4 +1,4 @@
-package com.example.demo.restservice;
+package com.example.backoffice.backofficeapi.restservices;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
