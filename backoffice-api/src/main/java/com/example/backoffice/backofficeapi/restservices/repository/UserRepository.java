@@ -1,10 +1,10 @@
 package com.example.backoffice.backofficeapi.restservices.repository;
 
-import com.example.backoffice.backofficeapi.restservices.Greeting;
+import com.example.backoffice.backofficeapi.restservices.User;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GreetingRepository extends PagingAndSortingRepository<Greeting, Long> {
+public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
 }
