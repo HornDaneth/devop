@@ -1,6 +1,8 @@
 package com.example.backoffice.backofficeapi.restservices;
 
 import com.example.backoffice.backofficeapi.restservices.repository.UserRepository;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +32,8 @@ public class UserRestController {
     }
 
     @PostMapping("/users")
-    void addUser(@RequestBody User user) {
+    @ApiOperation("Add new user")
+    public void addUser(@RequestBody User user) {
         userRepository.save(user);
     }
 

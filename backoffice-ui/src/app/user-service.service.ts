@@ -9,7 +9,7 @@ export class UserService {
   private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/api/v1/users';
+    this.usersUrl = 'http://localhost:8081/api/v1/users';
   }
 
   public findAll(): Observable<User[]> {
