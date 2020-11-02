@@ -32,3 +32,18 @@ services:
           - ~/logs:/root/logs
         ports:
           - "18888:8080"
+
+    # BACKOFFICE UI SERVICE
+        backoffice_ui:
+          build:
+            context: ./backoffice-ui
+            dockerfile: Dockerfile # Default Dockerfile
+          container_name: backoffice_ui
+          image: backoffice-ui:0.0.1
+          volumes:
+            - ~/logs:/root/logs
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/environment:/etc/environment:ro
+          ports:
+            - "2020:80"

@@ -72,10 +72,10 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         http.headers()
                 .frameOptions().sameOrigin().and()
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
+                //.antMatchers("/").permitAll()
 //                .antMatchers("/user/**").hasAnyRole("USER")
 //                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .antMatchers("/api").authenticated();
+                .antMatchers("/api/v1/*").authenticated();
     }
 
 //    @Bean
