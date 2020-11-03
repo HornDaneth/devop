@@ -20,10 +20,12 @@ public class UserRestController {
     protected static final String ROOT_URL = "/api/v1";
 
     private  final UserRepository userRepository;
+    private final KafkaProducer kafkaProducer;
 
     @Inject
-    public UserRestController(UserRepository userRepository){
+    public UserRestController(UserRepository userRepository, KafkaProducer kafkaProducer, KafkaConsumer kafkaConsumer){
         this.userRepository = userRepository;
+        this.kafkaProducer = kafkaProducer;
     }
 
     @GetMapping("/users")
@@ -37,5 +39,10 @@ public class UserRestController {
         userRepository.save(user);
     }
 
+    @PostMapping
+    public String post(@RequestBody String text){
+        kafkaProducer.sendMessage(text);
+        return text;
+    }
 
 }
